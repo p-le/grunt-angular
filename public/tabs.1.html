@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-strict-di>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+    <script src="app.min.js"></script>
+  </head>
+  <body>
+    <div class="tabs-holder" ng-app="myApp" ng-init="tab=1">
+      <ul class="tabs-nav">
+        <li><a ng-click="tab=1" ng-class="{'active': tab==1}">First Tab</a></li>
+        <li><a ng-click="tab=2" ng-class="{'active': tab==2}">Second Tab</a></li>
+        <li><a ng-click="tab=3" ng-class="{'active': tab==3}">Third Tab</a></li>
+      </ul>
+
+      <div class="tabs-container">
+        <div class="tab-content" ng-show="tab==1" ng-cloak>
+          <h1>First Tab</h1>
+          <p>Simple Tab 1</p>
+        </div>
+        <div class="tab-content" ng-show="tab==2" ng-cloak>
+          <h1>Second Tab</h1>
+          <p>Simple Tab 2</p>
+        </div>
+        <div class="tab-content" ng-show="tab==3" ng-cloak>
+          <h1>Third Tab</h1>
+          <p>Simple Tab 3</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
