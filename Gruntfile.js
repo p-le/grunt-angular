@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         livereload: true
       },
       files: [ 'src/**'],
-      task: ''
+      tasks: [ 'build' ]
     },
     express: {
       all: {
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
     },
     concat: {
       js: {
-        src: [ './build/app.bundle.js', './build/src/*.js'],
+        src: [ './build/app.bundle.js', './build/src/**/*.js'],
         dest: './public/app.bundle.js'
       }
     },

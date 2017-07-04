@@ -1,0 +1,55 @@
+.modal-overlay {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+}
+
+.modal-bg {
+  z-index: 10000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+.modal-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+.tabs-nav {
+  padding: 20px 0 0;
+  list-style: none;
+}
+
+.tabs-nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.tabs-nav a {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tabs-nav .active {
+  color: red;
+}
+
+.tab-content {
+  border: 1px solid #ddd;
+  padding: 20px;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-strict-di>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+    <script src="app.min.js"></script>
+  </head>
+  <body ng-controller="ModalCtrl">
+    <!--<script type="text/ng-template" id="modal.html">
+      <div ng-show='show'>
+        <div class='modal-overlay' ng-click='hideModal()'></div>
+        <div class='modal-bg' ng-style='windowStyle'>
+          <div class='modal-close' ng-click='hideModal()'>X</div>
+          <div class='modal-content' ng-transclude></div>
+        </div>
+      </div>
+    </script>-->
+    <button ng-click='toogleModal()'>Open Modal</button>
+    <modal-window show='modalShown' width='600px' height='30%' ng-cloak>
+      <p>Hello Simple Modal Window</p>
+    </modal-window>
+  </body>
+</html>
