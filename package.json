@@ -5,13 +5,18 @@
   "license": "MIT",
   "scripts": {
     "start": "./node_modules/.bin/grunt server",
-    "build": "./node_modules/.bin/grunt build"
+    "build": "./node_modules/.bin/grunt build",
+    "test": "./node_modules/.bin/karma start"
   },
   "dependencies": {
+    "angular": "^1.6.5",
+    "angular-animate": "^1.6.5",
+    "angular-ui-router": "^1.0.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.3"
   },
   "devDependencies": {
+    "angular-mocks": "^1.6.5",
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
@@ -20,6 +25,11 @@
     "grunt-express": "^1.4.1",
     "grunt-ng-annotate": "^3.0.0",
     "grunt-parallel": "^0.5.1",
-    "jshint": "^2.9.5"
+    "jasmine-core": "^2.6.4",
+    "jshint": "^2.9.5",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.0"
   }
 }

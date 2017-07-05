@@ -6,10 +6,19 @@
   
   function testDirective() {
     return {
-      scope: true,
-      restrict: 'E',
-      replace: true,
-      template: '<h3>Hello BBBB Directives</h3>'
+      priority: 3,
+      scope: {
+        abc: '=',
+        def: '&'
+      },
+      restrict: 'EA',
+      template: '<p>abc defaaa</p>',
+      link: link
     };
+  }
+
+  function link(scope, element, attrs) {
+    console.log(scope.abc);
+    console.log(scope.def);
   }
 })();

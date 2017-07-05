@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
     <script src="https://unpkg.com/@uirouter/angularjs@1.0.5/release/angular-ui-router.min.js"></script>
-    <script src="app.min.js"></script>
+    <script src="app.bundle.js"></script>
   </head>
   <body>
     
@@ -17,9 +17,12 @@
       <a ui-sref="about" ui-sref-active="active">About</a>
       
       <ui-view></ui-view>
-      <form name="test" ng-controller='FormController' class='my-form' ng-cloak>
+      <!--<form name="test" ng-controller='FormController' class='my-form' ng-cloak>
+      </form>-->
+      <div ng-controller="LinkCtrl">
+        <test-directive abc="World" def="test"></test-directive>
+      </div>
 
-      </form>
       <my-tabs>
         <tab-content heading="First Tab">
           <h1>First Tab</h1>

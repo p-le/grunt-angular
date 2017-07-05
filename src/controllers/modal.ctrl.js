@@ -10,7 +10,6 @@
 
     function toogleModal() {
       $scope.modalShown = !$scope.modalShown;
-      console.log($scope);
     }
   }
 })();

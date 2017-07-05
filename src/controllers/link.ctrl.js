@@ -4,7 +4,7 @@
     .module('myApp')
     .controller('LinkCtrl', LinkCtrl);
 
-  function LinkCtrl() {
-    
+  function LinkCtrl($scope) {
+    $scope.test = 'Hello';
   }
 })();
