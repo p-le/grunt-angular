@@ -3,25 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>Angular App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+    <script src="https://unpkg.com/@uirouter/angularjs@1.0.5/release/angular-ui-router.min.js"></script>
     <script src="app.min.js"></script>
   </head>
   <body>
-    <div>
+    
+    <div class="container">
+      <a ui-sref="hello" ui-sref-active="active">Hello</a>
+      <a ui-sref="about" ui-sref-active="active">About</a>
+      
+      <ui-view></ui-view>
+      <form name="test" ng-controller='FormController' class='my-form' ng-cloak>
+
+      </form>
       <my-tabs>
         <tab-content heading="First Tab">
           <h1>First Tab</h1>
         </tab-content>
-        <tab-content heading="First Tab">
+        <tab-content heading="Second Tab">
           <h1>Second Tab</h1>
         </tab-content>
-        <tab-content heading="First Tab">
+        <tab-content heading="Third Tab">
           <h1>Third Tab</h1>
         </tab-content>
       </my-tabs>
     </div>
+    
   </body>
 </html>

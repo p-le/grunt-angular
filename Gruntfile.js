@@ -19,6 +19,19 @@ module.exports = function(grunt) {
         }
       }
     },
+    copy: {
+      main: {
+        files: [
+          { 
+            expand: true, 
+            src: ['./src/**/*.html'], 
+            dest: 'public/',
+            flatten: true,
+            filter: 'isFile'
+          }
+        ],
+      },
+    },
     ngAnnotate: {
       options: {
         singleQuotes: true
@@ -46,11 +59,13 @@ module.exports = function(grunt) {
       }
     }
   });
+
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.registerTask('server', ['express', 'watch']);
-  grunt.registerTask('build', [ 'ngAnnotate', 'concat', 'uglify' ]);
+  grunt.registerTask('build', [ 'ngAnnotate', 'concat', 'uglify', 'copy' ]);
 };

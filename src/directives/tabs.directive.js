@@ -13,7 +13,7 @@
       template: 
         '<div class="tab-content">'+
           '<ul class="tabs-nav">' +
-            '<li ng-repeat="tab in tabs" ng-class="{ active: currentTab = $index }" >' +
+            '<li ng-repeat="tab in tabs track by $index" ng-class="{ active: currentTab = $index }" >' +
               '<a ng-click="selectTab($index)" >{{tab}}</a>' +
             '</li>' +
           '</ul>' +
@@ -22,12 +22,13 @@
       controller: TabsController
     };
 
+    TabsController.$inject = [ '$scope'];
+    
     function TabsController($scope) {
       $scope.currentTab = 0;
       $scope.tabs = [];
       $scope.selectTab = selectTab;
-
-
+      
       function selectTab(index) {
         $scope.currentTab = index;
       }

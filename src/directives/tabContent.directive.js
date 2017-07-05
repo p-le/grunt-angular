@@ -14,12 +14,11 @@
       template: "<div class='tab-content' ng-show='showTab()' ng-transclude></div>",
       link: link
     }
-    
+
     return direcive;
   }
 
   function link(scope, element, attrs, tabs) {
-    console.log(tabs);
     var tabId = tabs.tabs.length;
 
     scope.showTab = showTab;

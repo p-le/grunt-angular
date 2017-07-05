@@ -53,3 +53,12 @@
   border: 1px solid #ddd;
   padding: 20px;
 }
+
+.my-form {
+  transition: all .3s ease;
+  background: transparent;
+}
+
+.my-form.ng-invalid {
+  background: red;
+}
