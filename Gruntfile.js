@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     },
     concat: {
       js: {
-        src: [ './build/app.bundle.js', './build/src/**/*.js'],
+        src: [ './build/app.bundle.js', './build/src/**/*.js', '!./src/**/*.spec.js' ],
         dest: './public/app.bundle.js'
       }
     },

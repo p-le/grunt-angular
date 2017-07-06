@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
     <script src="https://unpkg.com/@uirouter/angularjs@1.0.5/release/angular-ui-router.min.js"></script>
+    <script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
     <script src="app.bundle.js"></script>
   </head>
   <body>
@@ -17,12 +18,62 @@
       <a ui-sref="about" ui-sref-active="active">About</a>
       
       <ui-view></ui-view>
-      <!--<form name="test" ng-controller='FormController' class='my-form' ng-cloak>
-      </form>-->
-      <div ng-controller="LinkCtrl">
-        <test-directive abc="World" def="test"></test-directive>
-      </div>
 
+      <div ng-controller="GaugeController">
+        {{ value }}
+        <div id="preview">
+          <canvas gauge options="options" ng-model="value"></canvas>
+        </div>
+        <form id="opts" class="opts" name="gaugeForm">
+          <fieldset>
+            <legend>Options: </legend>
+            <div>
+              <label for="currval">Current Val: </label>
+              <input type="number" ng-model="value" name="currval" />
+            </div>
+            <div>
+              <label for="maxval">Max Val: </label>
+              <input type="number" ng-model="options.maxValue" name="maxval" />
+            </div>
+            <div>
+              <label for="angle">Angle: </label>
+              <input type="number" ng-model="options.angle" name="angle" min="0" max="50" step="1" />
+            </div>
+            <div>
+              <label for="lineWidth">Line Width: </label>
+              <input type="number" ng-model="options.lineWidth" name="lineWidth" min="0" max="70" />
+            </div>
+            <div>
+              <label for="pointerLength">Pointer Length: </label>
+              <input type="number" ng-model="options.pointer.length" name="pointerLength" min="0" max="100" />
+            </div>
+            <div>
+              <label for="pointerStrokeWidth">Pointer Stroke: </label>
+              <input type="number" ng-model="options.pointer.strokeWidth" name="pointerStrokeWidth" min="0" max="300" />
+            </div>
+            <div>
+              <label for="pointerColor">Pointer Color: </label>
+              <input type="text" ng-model="options.pointer.color" name="pointerColor" />
+            </div>
+            <div>
+              <label for="fontSize">Font Size: </label>
+              <input type="number" ng-model="options.fontSize" name="fontSize" min="0" max="100" />
+            </div>
+            <div>
+              <label for="colorStart">Color start:</label>
+              <input type="text" ng-model="options.colorStart" name="colorStart" class="color" />
+            </div>
+            <div>
+              <label for="colorStop">Color stop:</label>
+              <input type="text" ng-model="options.colorStop" name="colorStop" class="color" />
+            </div>
+            <div>
+              <label for="strokeColor">Background:</label>
+              <input type="text" ng-model="options.strokeColor" name="strokeColor" class="color" />
+            </div>
+          </fieldset>
+        </form>
+      </div>
       <my-tabs>
         <tab-content heading="First Tab">
           <h1>First Tab</h1>

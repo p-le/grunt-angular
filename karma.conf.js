@@ -7,14 +7,28 @@ module.exports = function(config) {
       'node_modules/angular-ui-router/release/angular-ui-router.min.js',
       'node_modules/angular-animate/angular-animate.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
+      'libs/gauge.min.js',
       'src/**/*.js',
       'src/**/*.spec.js'
     ],
     exclude: [
     ],
     preprocessors: {
+      'src/**/*.!(spec.)js': [ 'coverage' ]
     },
-    reporters: ['progress'],
+    reporters: [ 'spec', 'coverage' ],
+    specReporter: {
+      maxLogLines: 5,
+      suppressErrorSummary: true,
+      suppressFailed: false,
+      suppressPassed: false,
+      suppressSkipped: true,
+      showSpecTiming: false
+    },
+    coverageReporter: {
+      type : 'html',
+      dir : '__coverage__'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -22,5 +36,5 @@ module.exports = function(config) {
     browsers: ['Chrome'],
     singleRun: false,
     concurrency: Infinity
-  })
-}
+  });
+};
